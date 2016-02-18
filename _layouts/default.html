@@ -16,8 +16,8 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 	<script src="/assets/js/skel-panels.min.js"></script>
 	<script src="/assets/js/asciinema-player.js"></script>
 	<script src="/assets/js/init.js"></script>
+	<link rel="stylesheet" href="/assets/css/asciinema-player.css" />
 	<noscript>
-		<link rel="stylesheet" href="/assets/css/asciinema-player.css" />
 		<link rel="stylesheet" href="/assets/css/skel-noscript.css" />
 		<link rel="stylesheet" href="/assets/css/style.css" />
 		<link rel="stylesheet" href="/assets/css/style-desktop.css" />
@@ -27,17 +27,16 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 
 	<!-- Header -->
 	<div id="header">
-		{% include nav.html %}
 		<div class="container">
-
 			<!-- Logo -->
 			<div id="logo">
+				<img alt="Oh My Fish logo" src="/assets/images/logo.svg"/>
 				<h1><a href="#">Oh My Fish!</a></h1>
 			</div>
 			<div id="demo">
 				<div id="player-container"></div>
 				<script>
-				 	asciinema_player.core.CreatePlayer('player-container', '/assets/records/demo.json');
+				 	asciinema_player.core.CreatePlayer('player-container', '/assets/records/demo.json', { autoPlay: true, loop: true });
 				</script>
 			</div>
 		</div>
@@ -49,7 +48,9 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 	<div id="tweet">
 		<div class="container">
 			<section>
-				<blockquote>&ldquo;In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat.&rdquo;</blockquote>
+				<blockquote>
+					Oh My Fish is community-made, with packages maintained by developers like you, making easy to find packages that fit your taste and needs.
+				</blockquote>
 			</section>
 		</div>
 	</div>
@@ -61,13 +62,12 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 		<section>
 			<header>
 				<h2>Get in touch</h2>
-				<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+				<span class="byline">Join us in creating a framework for everyone</span>
 			</header>
 			<ul class="contact">
+				<li><a href="#" class="fa fa-github"><span>Github</span></a></li>
 				<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-				<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-				<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
-				<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
+				<li><a href="#" class="fa fa-slack"><span>Slack</span></a></li>
 			</ul>
 		</section>
 	</div>

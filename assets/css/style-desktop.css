@@ -16,20 +16,15 @@
 	{
 	}
 
-	header
+	header h2
 	{
-		margin-bottom: 1.6em;
+		font-size: 3.4em;
 	}
-	
-		header h2
-		{
-			font-size: 3.4em;
-		}
 
-		header .byline
-		{
-			font-size: 1.7em;
-		}
+	header .byline
+	{
+		font-size: 1.7em;
+	}
 
 /*********************************************************************************/
 /* Header                                                                        */
@@ -37,13 +32,26 @@
 
 	#header
 	{
-		padding: 10em 0 6em 0;
+		padding: 6em 0 0 0;
 	}
 
 	.homepage #header
 	{
 		padding: 16em 0 12em 0;
 	}
+
+	#logo h1
+	{
+		margin-bottom: 3em;
+		margin-top: 3em;
+	}
+
+	#logo img
+	{
+		width: 128px;
+		height: 128px;
+	}
+
 
 /*********************************************************************************/
 /* Main                                                                          */
@@ -53,7 +61,7 @@
 	{
 		padding: 6em 0em;
 	}
-	
+
 	.homepage #content header h2
 	{
 		padding: 0.70em 0em;
@@ -115,4 +123,12 @@
 		padding: 1em 4em;
 		line-height: 1.5em;
 		font-size: 1.8em;
-	}	
+	}
+
+/*********************************************************************************/
+/* Asciinema Player                                                              */
+/*********************************************************************************/
+
+	#demo {
+		margin-bottom: -30px;
+	}
