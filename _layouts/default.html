@@ -12,6 +12,10 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 	<meta name="keywords" content="" />
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.11.0/fetch.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/2.0.1/fuse.min.js"></script>
+	<script type="text/babel" src="/assets/js/package-search.js"></script>
 	<script src="/assets/js/skel.min.js"></script>
 	<script src="/assets/js/skel-panels.min.js"></script>
 	<script src="/assets/js/asciinema-player.js"></script>
@@ -36,7 +40,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 			<div id="demo">
 				<div id="player-container"></div>
 				<script>
-				 	asciinema_player.core.CreatePlayer('player-container', '/assets/records/demo.json', { autoPlay: true, loop: true });
+					asciinema_player.core.CreatePlayer('player-container', '/assets/records/demo.json', { autoPlay: true, loop: true });
 				</script>
 			</div>
 		</div>
@@ -61,19 +65,17 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 			<div class="row">
 				<input type="text" class="package-search" placeholder="Search for packages" />
 			</div>
-
 			<div class="row">
 				<section class="row package">
 					<span class="9u">
 						<h2>Mauris vulputate dolor</h2>
 						<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 					</span>
-					<!-- <a class="1u fa fa-dropbox" href="#"></a> -->
+					<a class="1u fa fa-dropbox" href="#"><span>Package</span></a>
 					<a class="1u fa fa-terminal" href="#"><span>Prompt</span></a>
 					<a class="1u fa fa-github" href="#"><span>Github</span></a>
 				</section>
 			</div>
-
 		</div>
 	</div>
 
@@ -99,7 +101,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <!-- Copyright -->
 <div id="copyright">
 	<div class="container">
-		Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+		Design: <a href="http://templated.co">TEMPLATED</a>
 		Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a>
 	</div>
 </div>

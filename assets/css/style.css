@@ -915,26 +915,30 @@
 		outline: none;
 	}
 
-	section.package h2
-	{
-		font-size: 36px;
-		margin-bottom: 12px;
+	section.package {
+		width: 100%;
 	}
 
-	section.package a.fa
-	{
-		font-size: 48px;
-		color: black;
-		text-align: right;
-	}
-
-		section.package a.fa span
+		section.package h2
 		{
-			font-size: 18px;
-			color: black;
-			text-align: center;
-			text-decoration: none;
+			font-size: 36px;
+			margin-bottom: 12px;
 		}
+
+		section.package a.fa
+		{
+			font-size: 48px;
+			color: black;
+			text-align: right;
+		}
+
+			section.package a.fa span
+			{
+				font-size: 18px;
+				color: black;
+				text-align: center;
+				text-decoration: none;
+			}
 
 /*********************************************************************************/
 /* Footer                                                                        */
