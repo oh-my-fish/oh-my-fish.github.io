@@ -905,6 +905,37 @@
 		padding-bottom: 0.50em;
 	}
 
+	input.package-search
+	{
+		font-size: 30px;
+		width: 100%;
+		text-align: center;
+		border: none;
+		background-color: rgba(0, 0, 0, 0.1);
+		outline: none;
+	}
+
+	section.package h2
+	{
+		font-size: 36px;
+		margin-bottom: 12px;
+	}
+
+	section.package a.fa
+	{
+		font-size: 48px;
+		color: black;
+		text-align: right;
+	}
+
+		section.package a.fa span
+		{
+			font-size: 18px;
+			color: black;
+			text-align: center;
+			text-decoration: none;
+		}
+
 /*********************************************************************************/
 /* Footer                                                                        */
 /*********************************************************************************/
@@ -985,28 +1016,9 @@
 	{
 		position: relative;
 		text-align: center;
-		background: url(../images/header.jpg) no-repeat center center;
-		background-attachment: fixed;
-		background-size: cover;
+		background: url(../images/diagmonds-light.png) repeat;
+		background-color: rgb(5, 54, 65);
 	}
-
-		#tweet:before
-		{
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(64,64,64,0.5);
-		}
-	
-		#tweet section
-		{
-			border-top: 1px solid;
-			border-bottom: 1px solid;
-			border-color: rgba(255,255,255,.1);
-		}
 
 		#tweet blockquote
 		{
@@ -1014,5 +1026,5 @@
 			border: none;
 			margin: 0;
 			font-weight: 300;
-			color: rgba(255,255,255,.6);
-		}	
+			color: white;
+		}
