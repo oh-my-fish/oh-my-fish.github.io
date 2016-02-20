@@ -3,7 +3,9 @@ var typeNameRegex = /^(plugin|theme)-(.+)$/
 class Progress extends React.Component {
   render() {
     return this.props.active
-      ? <section className="1u loading"><span className="fa fa-circle-o-notch"></span></section>
+      ? <section className="1u loading">
+          <span className="fa fa-circle-o-notch"></span>
+        </section>
       : null
   }
 }
