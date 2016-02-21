@@ -1,7 +1,24 @@
 ---
-title: Linear
-layout: default
+title: Oh My Fish
+layout: home
 ---
+<!-- Header -->
+<div id="header">
+	<div class="container">
+		<!-- Logo -->
+		<div id="logo">
+			<img alt="Oh My Fish logo" src="/assets/images/logo.svg"/>
+			<h1><a href="#">Oh My Fish!</a></h1>
+		</div>
+		<div id="demo">
+			<div id="player-container"></div>
+			<script>
+				asciinema_player.core.CreatePlayer('player-container', '/assets/records/demo.json', { autoPlay: true, loop: true });
+			</script>
+		</div>
+	</div>
+</div>
+
 <!-- Featured -->
 <div id="featured">
 	<div class="container">
@@ -32,3 +49,19 @@ layout: default
 		</div>
 	</div>
 </div>
+
+<!-- Tweet -->
+<div id="tweet">
+	<div class="container">
+		<section>
+			<blockquote>
+				Oh My Fish is community-made, with packages maintained by developers like you, making easy to find packages that fit your taste and needs.
+			</blockquote>
+		</section>
+	</div>
+</div>
+
+<!-- Main -->
+<div id="main">
+</div>
+
