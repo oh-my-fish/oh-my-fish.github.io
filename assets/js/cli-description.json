@@ -1,0 +1,165 @@
+{
+  "command": "omf",
+  "description": "a small utility to fetch and install new packages and themes",
+  "options": [
+    {
+      "long": "help",
+      "short": "h",
+      "description": "get help on how to use this utility"
+    },
+    {
+      "long": "version",
+      "short": "v",
+      "description": "display version"
+    }
+  ],
+  "commands": [
+    {
+      "long": "list",
+      "short": "l",
+      "description": "list local packages",
+      "options": [
+        {
+          "long": "installed",
+          "short": "i",
+          "description": "show installed packages [default]"
+        },
+        {
+          "long": "available",
+          "short": "a",
+          "description": "show known packages which aren't already installed"
+        },
+        {
+          "long": "database",
+          "short": "d",
+          "description": "show known packages"
+        }
+      ]
+    },
+    {
+      "long": "describe",
+      "short": "d",
+      "description": "get information about packages",
+      "arguments": [
+        {
+          "name": "package",
+          "optional": false,
+          "description": "a plugin or theme name"
+        }
+      ]
+    },
+    {
+      "long": "install",
+      "short": "i",
+      "description": "install one or more packages",
+      "arguments": [
+        {
+          "name": "",
+          "description": "install missing packages from bundle"
+        },
+        {
+          "name": "package ...",
+          "description": "package names or urls"
+        }
+      ]
+    },
+    {
+      "long": "theme",
+      "short": "t",
+      "description": "list themes or choose a theme",
+      "arguments": [
+        {
+          "name": "",
+          "description": "list installed and available themes"
+        },
+        {
+          "name": "theme",
+          "description": "use the specified theme"
+        }
+      ]
+    },
+    {
+      "long": "remove",
+      "short": "r",
+      "description": "remove an installed plugin or theme",
+      "arguments": [
+        {
+          "name": "package",
+          "optional": false,
+          "description": "plugin or theme name"
+        }
+      ]
+    },
+    {
+      "long": "update",
+      "short": "u",
+      "description": "update Oh-My-Fish and packages"
+    },
+    {
+      "long": "cd",
+      "short": "c",
+      "description": "change directory to the plugin/theme directory",
+      "arguments": [
+        {
+          "name": "",
+          "description": "cd to Oh-My-Fish's root directory"
+        },
+        {
+          "name": "package",
+          "description": "cd to the package's directory"
+        }
+      ]
+    },
+    {
+      "long": "new",
+      "short": "n",
+      "description": "create a new package from template",
+      "arguments": [
+        {
+          "name": "(pkg | theme)",
+          "description": "pkg = create a new plugin; theme = create a new theme",
+          "optional": false
+        },
+        {
+          "name": "name",
+          "description": "a name for the new package",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "long": "submit",
+      "short": "s",
+      "description": "submit a package to the registry",
+      "arguments": [
+        {
+          "name": "(pkg | theme)",
+          "description": "pkg = submit a plugin; theme = submit a theme",
+          "optional": false
+        },
+        {
+          "name": "url",
+          "description": "the repository's url"
+        }
+      ]
+    },
+    {
+      "long": "destroy",
+      "description": "uninstall Oh-My-Fish"
+    },
+    {
+      "long": "doctor",
+      "description": "troubleshoot Oh-My-Fish"
+    },
+    {
+      "long": "help",
+      "description": "show help about a specific action",
+      "arguments": [
+        {
+          "name": "command",
+          "description": "the command to show help about"
+        }
+      ]
+    }
+  ]
+}
