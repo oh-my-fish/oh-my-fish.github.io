@@ -141,12 +141,12 @@
       "description": "submit a package to the registry",
       "options": [
         {
-          "name": "pkg",
+          "long": "pkg",
           "description": "submit a plugin",
           "dash": false
         },
         {
-          "name": "theme",
+          "long": "theme",
           "description": "submit a theme",
           "dash": false
         }
