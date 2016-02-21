@@ -2,14 +2,45 @@ class Option extends React.Component {
   title() {
     var { long, short, dash = true } = this.props
     return long && short
-      ? `${dash ? '--' : ''}${long} or ${dash ? '-' : ''}${short}`
+      ? `${dash ? '--' : ''}${long}, ${dash ? '-' : ''}${short}`
       : long ? `${dash ? '--' : ''}${long}` : `${dash ? '-' : ''}${short}`
   }
 
   render() {
     var { description} = this.props
     return (
-      <li><strong>{this.title()}:</strong> {description}</li>
+      <tr>
+        <td>
+          <strong>{this.title()}</strong>
+        </td>
+        <td>
+          {description}
+        </td>
+      </tr>
+    )
+  }
+}
+
+class Argument extends React.Component {
+  title() {
+    var { name } = this.props
+    return R.isEmpty(name) ? `no arguments` : `${name}`
+  }
+
+  render() {
+    var { name, description, optional  = true } = this.props
+    return (
+      <tr>
+        <td>
+          <strong>
+            {this.title()}
+          </strong>&nbsp;
+        </td>
+        <td>
+          {description}&nbsp;
+          {optional && !R.isEmpty(name) ? '(optional)' : null}
+        </td>
+      </tr>
     )
   }
 }
@@ -18,7 +49,7 @@ class Command extends React.Component {
   subcommand() {
     var { long, short } = this.props
     return long && short
-      ? `(${long}|${short})`
+      ? `(${long} | ${short})`
       : `${long || short}`
   }
 
@@ -28,9 +59,49 @@ class Command extends React.Component {
 
     return nodash.length > 0
       ? nodash.length > 1
-        ? `(${nodash.join('|')})`
+        ? `(${nodash.join(' | ')})`
         : `${nodash}`
       : ''
+  }
+
+  options() {
+    var { options = [] } = this.props
+    var dashed = options
+      .filter(opt => opt.dash !== false)
+      .map(opt => `--${opt.long}`)
+
+    return dashed.length > 0
+      ? dashed.length > 1
+        ? `[${dashed.join(' | ')}]`
+        : `${dashed}`
+      : ''
+  }
+
+  arguments() {
+    var { arguments: args = [] } = this.props
+    return R.compose(R.join(' '), R.reject(R.isNil))(
+      args.map(arg => {
+        return (
+          arg.name
+            ? (arg.optional === false
+                ? `<${arg.name}>`
+                : `[${arg.name}]`)
+              +
+              (arg.repeating === true
+                ? '...'
+                : '')
+            : undefined
+        )
+      })
+    )
+  }
+
+  tableTitle(title) {
+    return (
+      <tr>
+        <td className="title" colSpan="2">Options</td>
+      </tr>
+    )
   }
 
   render() {
@@ -39,7 +110,7 @@ class Command extends React.Component {
     return (
       <section className="row package">
         <header className="11u">
-          <h2>
+          <h3>
             <span className="command-command">
               {command}&nbsp;
             </span>
@@ -49,15 +120,35 @@ class Command extends React.Component {
             <span className="command-suboptions">
               { this.suboptions() }&nbsp;
             </span>
-            { R.reject(R.isNil, args.map(arg =>
-              arg.name ? `<${arg.name}>` : undefined)).join(' ') }
-          </h2>
+            <span className="command-options">
+              { this.options() }&nbsp;
+            </span>
+            <span className="command-arguments">
+              { this.arguments() }
+            </span>
+          </h3>
           <p>{description}</p>
         </header>
-        <ul>
-          { options.map(function (opt) {
-              return <Option key={opt.long} {...opt} />}) }
-        </ul>
+        <div className="command-options-arguments">
+          <table>
+            <tbody>
+              { options && options.length > 0
+                  ? this.tableTitle('Options')
+                  : null }
+              { options && options.length > 0
+                  ? options.map(function (opt) {
+                    return <Option key={opt.long} {...opt} />})
+                    : null }
+              { args && args.length > 0
+                  ? this.tableTitle('Arguments')
+                  : null }
+              { args && args.length > 0
+                  ? args.map(function (arg) {
+                    return <Argument key={arg.name} {...arg} />})
+                  : null }
+            </tbody>
+          </table>
+        </div>
       </section>
     )
   }
@@ -65,11 +156,18 @@ class Command extends React.Component {
 
 class CommandLineDocs extends React.Component {
   render() {
-    var { source: { command, description, options, commands } } = this.props
+    var { source: {
+      command,
+      tagline,
+      description,
+      options,
+      commands
+    } } = this.props
+
     return (
       <section className="row package">
         <header className="11u">
-          <h2>{command}</h2>
+          <h2>{command} -- {tagline}</h2>
           <p>{description}</p>
         </header>
         { commands
@@ -123,7 +221,7 @@ class CommandLineSearch extends React.Component {
              'options.long', 'options.description',
              'arguments.name', 'arguments.description'],
       threshold: 0.6,
-      distance: 2
+      distance: 200
     })
     return search
       ? R.assoc('commands', fuzzy.search(search), source)

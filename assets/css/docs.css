@@ -28,7 +28,7 @@
 
 section.package header
 {
-	padding-top: 50px !important;
+	padding-top: 30px !important;
 	margin-bottom: 0px;
 }
 
@@ -37,12 +37,50 @@ section.package header p
 	margin-bottom: 0;
 }
 
-.cli-docs ul
+section.package header p:first-letter
 {
-	padding-top: 0px;
+	text-transform: capitalize;
+}
+
+section.package header h2, section.package header h3
+{
+	font-family: 'Roboto Mono';
+}
+
+section.package header h3
+{
+
+	font-size: 28px;
+	margin-bottom: 10px;
 }
 
 .command-command
 {
 	color: rgb(0,0,0);
+}
+
+.command-options-arguments
+{
+	padding-top: 0px !important;
+}
+
+.command-options-arguments table
+{
+	margin: 10px 0 0 0;
+}
+
+.command-options-arguments table td
+{
+	padding: 5px 15px;
+}
+
+.command-options-arguments table td:last-of-type:first-letter
+{
+	text-transform: capitalize;
+}
+
+.command-options-arguments table td.title
+{
+	padding: 5px 0px;
+	font-weight: 400;
 }
