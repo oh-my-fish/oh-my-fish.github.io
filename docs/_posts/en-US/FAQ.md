@@ -1,17 +1,3 @@
-<div align="center">
-  <a href="http://git.oh-my.fish/">
-    <img width=120px  src="https://cloud.githubusercontent.com/assets/8317250/8510172/f006f0a4-230f-11e5-98b6-5c2e3c87088f.png">
-  </a>
-</div>
-
-<br>
-
-<p align="center">
-  <b>English</b> &bull;
-  <a href="docs/zh-CN/FAQ.md">简体中文</a>
-</p>
-
-
 # FAQ
 
 Thanks for taking the time to read this FAQ. Feel free to create a new issue if your question is not answered here.
@@ -38,7 +24,7 @@ There are roughly 3 kinds of packages:
 
 1. Configuration utilities. For example [`pkg-pyenv`](https://github.com/oh-my-fish/pkg-pyenv) checks whether `pyenv` exists in your system and runs `(pyenv init - | psub)` for you during startup.
 
-2. Themes. Check our [theme gallery](https://github.com/oh-my-fish).
+2. Themes. Check our [theme gallery](https://oh-my.fish/docs/Themes).
 
 3. Traditional shell utilities. For example [`pkg-copy`](https://github.com/oh-my-fish/pkg-copy), a clipboard utility compatible across Linux and OSX.
 
