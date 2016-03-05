@@ -52,7 +52,7 @@ curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | sh
 
 You can now safely remove `$fish_path`.
 
-```fish
+```shell
 rm -rf "$fish_path"
 ```
 

@@ -4,7 +4,7 @@ To learn package creation let's create a new package that will provide a `hello_
 
 Oh My Fish can scaffold a package structure for you. Use the command `omf new`:
 
-```fish
+```shell
 $ omf new pkg hello_world
 ```
 
@@ -23,7 +23,7 @@ Always describe how your package works in the `README.md`. Also read more about 
 
 `hello_world.fish` defines a single function:
 
-```fish
+```shell
 function hello_world -d "Prints hello world"
   echo "Hello World!"
 end
@@ -41,7 +41,7 @@ Packages were designed to take advantages of fish events. There are currently tw
 
 If you want to be [notified](http://fishshell.com/docs/current/commands.html#emit) when your package loads, declare the following function in your `hello_world.fish`:
 
-```fish
+```shell
 function init -a path --on-event init_hello_world
   echo "hello_world initialized"
 end
@@ -53,7 +53,7 @@ Use this event to modify the environment, load resources, autoload functions, et
 
 Oh My Fish emits `uninstall_<pkg>` events before a package is removed via `omf remove <pkg>`. Subscribers can use the event to clean up custom resources, etc.
 
-```fish
+```shell
 function uninstall --on-event uninstall_hello_world
 end
 ```
@@ -65,7 +65,7 @@ Oh My Fish keeps a registry of public packages under `$OMF_PATH/db/`.
 
 To add your package to the registry you need to:
 
-```fish
+```shell
 # For packages:
 omf submit pkg/hello_world .../hello_world.git
 
