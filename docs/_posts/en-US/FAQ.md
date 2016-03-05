@@ -1,3 +1,7 @@
+---
+description: Frequently Asked Questions
+---
+
 # FAQ
 
 Thanks for taking the time to read this FAQ. Feel free to create a new issue if your question is not answered here.

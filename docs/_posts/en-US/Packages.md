@@ -1,3 +1,7 @@
+---
+description: Packages
+---
+
 # Creating
 
 To learn package creation let's create a new package that will provide a `hello_world` command for your shell. Package names may only contain lowercase letters and hyphens to separate words.
