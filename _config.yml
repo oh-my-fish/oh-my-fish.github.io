@@ -1,10 +1,14 @@
 name: Oh My Fish!
 title: Oh My Fish!
 description: The fish shell framework
-paginate: 10
-
+#paginate: 10
+markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: shell
 
 defaults:
   -
