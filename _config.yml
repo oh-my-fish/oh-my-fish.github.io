@@ -1,3 +1,23 @@
-name: Linear
-description: Linear template for Jekyll
-paginate: 10
+name: Oh My Fish!
+title: Oh My Fish!
+description: The fish shell framework
+#paginate: 10
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: shell
+
+defaults:
+  -
+    scope:
+      path: "docs"
+      type: "posts"
+    values:
+      layout: "docs-markdown"
+      permalink: "docs/:title"
+
+gems:
+  - jemoji

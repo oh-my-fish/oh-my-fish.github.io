@@ -1,0 +1,36 @@
+.markdown
+{
+  font-size: 13pt;
+}
+.markdown h1,h2,h3,h4,h5,h6
+{
+  margin-top: 1em;
+  margin-bottom: 0.7em;
+}
+.markdown h1
+{
+  color: #000;
+  font-weight: bold;
+  font-size: 20pt;
+}
+.markdown h2
+{
+  color: #141414;
+  font-size: 16pt;
+}
+.markdown ul li > p
+{
+  display: inline;
+}
+.markdown ul
+{
+  list-style-type: circle;
+}
+.markdown ol
+{
+  list-style-type: decimal;
+}
+.markdown img
+{
+  max-width: 70%;
+}
