@@ -20,5 +20,4 @@ defaults:
       permalink: "docs/:title"
 
 gems:
-  - jekyll-redirect-from
   - jemoji
